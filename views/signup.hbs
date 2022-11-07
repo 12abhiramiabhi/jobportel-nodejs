@@ -4,21 +4,21 @@
     <h1>registration</h1>
 </div>
 <div class="main">
-    <form>
+    <form action="/signup" method="post">
         <div id="name">
             <h2 class="name">name</h2>
-            <input class="firstname" type="rext" name="first_name"><br>
+            <input class="firstname" type="rext" name="name" required><br>
 
         </div>
 
         <h2 class="name">password</h2>
-        <input class="company" type="text" name="last_name">
+        <input class="company" type="text" name="password" required>
 
         <h2 class="name">email</h2>
-        <input class="email" type="text" name="email">
+        <input class="email" type="text" name="email" required>
 
         <h2 class="name">phone</h2>
-        <input class="code" type="text" name="area_code">
+        <input class="phone" type="text" name="phone" required>
 
         <button type="submit">register</button>
 

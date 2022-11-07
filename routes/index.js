@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { getIndexPage, signupage, login } = require("../controllers/userController")
+const { getIndexPage, signupage, login, dosignup, dologin } = require("../controllers/userController")
 
 
 /* GET home page. */
@@ -9,6 +9,11 @@ router.get('/', getIndexPage);
 
 router.get('/signup', signupage);
 
+router.post('/signup', dosignup);
+
 router.get('/login', login)
+
+router.post('/login', dologin)
+
 
 module.exports = router;
