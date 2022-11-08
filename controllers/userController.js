@@ -1,5 +1,5 @@
 const userModel = require("../model/usermodel")
-const bcript = require('bcrypt');
+const bcrypt = require('bcrypt');
 const usermodel = require("../model/usermodel");
 
 function getIndexPage(req, res, next) {
@@ -10,13 +10,17 @@ function signupage(req, res, next) {
 }
 function login(req, res, next) {
     res.render('login',);
-    console.log("login page submitted");
 }
+
+function homePage(req, res) {
+    res.render('home')
+}
+
 
 async function dosignup(req, res, next) {
     console.log(req.body)
     try {
-        req.body.password = await bcript.hash(req.body.password, 10)
+        req.body.password = await bcrypt.hash(req.body.password, 10)
         await userModel.create(req.body);//data edukkunth
         res.redirect("/login")
     } catch (error) {
@@ -25,10 +29,20 @@ async function dosignup(req, res, next) {
 }
 
 async function dologin(req, res,) {
-    console.log(req.body);
+    // console.log(req.body);
+    console.log(req.body.password);//form nn frond end//
     let user = await usermodel.findOne({ email: req.body.email })
     if (user != null) {
-        console.log();
+        console.log(user.password);//user data base//
+        let check = await bcrypt.compare(req.body.password, user.password)
+        console.log(check);//check 
+
+        if (check == true) {
+            res.send("success")
+        } else {
+            res.redirect("/login")
+        }
+
     } else {
         res.redirect("/login")
     }

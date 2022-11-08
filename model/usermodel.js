@@ -9,6 +9,7 @@ const taskSchema = mongoose.Schema({
         maxLength: 50,
         require: true,
         type: String,
+        unique: true
     },
     password: {
         maxLength: 200,
