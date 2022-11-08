@@ -2,6 +2,7 @@ const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
 const usermodel = require("../model/usermodel");
 
+
 function getIndexPage(req, res, next) {
     res.render('index', { title: 'Express', myName: 'abhiramiiii', name: 'anu', std: { mark: 100 } });
 }
@@ -38,7 +39,8 @@ async function dologin(req, res,) {
         console.log(check);//check 
 
         if (check == true) {
-            res.send("success")
+            res.redirect("/home")
+
         } else {
             res.redirect("/login")
         }
@@ -47,4 +49,4 @@ async function dologin(req, res,) {
         res.redirect("/login")
     }
 }
-module.exports = { getIndexPage, signupage, login, dosignup, dologin }
+module.exports = { getIndexPage, signupage, login, dosignup, dologin, homePage }
