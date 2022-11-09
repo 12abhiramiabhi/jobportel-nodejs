@@ -14,15 +14,20 @@ function login(req, res, next) {
 }
 
 function homePage(req, res) {
-    res.render('home')
+    console.log(req.session.user)
+    if (req.session.user) {
+        res.render('home')
+    } else {
+        res.redirect("/login")
+    }
 }
 
 
 async function dosignup(req, res, next) {
-    console.log(req.body)
+    console.log(req.body)//form le frond end le data 
     try {
         req.body.password = await bcrypt.hash(req.body.password, 10)
-        await userModel.create(req.body);//data edukkunth
+        await userModel.create(req.body);//data database il vezunnu
         res.redirect("/login")
     } catch (error) {
         console.log(error);
@@ -39,6 +44,7 @@ async function dologin(req, res,) {
         console.log(check);//check 
 
         if (check == true) {
+            req.session.user = user
             res.redirect("/home")
 
         } else {
