@@ -7,11 +7,9 @@ const session = require('express-session')
 var app = express();
 
 
-
 var indexRouter = require('./routes/index');
 const companyRouter = require('./routes/company')
 const addmin = require('./routes/admin')
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

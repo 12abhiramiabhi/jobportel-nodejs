@@ -26,7 +26,7 @@ async function dosignup(req, res, next) {
     console.log(req.body)//form le frond end le data 
     try {
         req.body.password = await bcrypt.hash(req.body.password, 10)
-        await userModel.create(req.body);//data database il vezunnu
+        await userModel.create(req.body);//database il data  vezunnu
         res.redirect("/login")
     } catch (error) {
         console.log(error);
