@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 const companyRouter = require('./routes/company')
 const addmin = require('./routes/admin')
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -31,6 +32,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/company', companyRouter)
 app.use('/admin', addmin)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,6 +1,5 @@
 const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
-const usermodel = require("../model/usermodel");
 
 
 function getIndexPage(req, res, next) {
@@ -37,7 +36,7 @@ async function dosignup(req, res, next) {
 async function dologin(req, res,) {
     // console.log(req.body);
     console.log(req.body.password);//form nn frond end//
-    let user = await usermodel.findOne({ email: req.body.email })
+    let user = await userModel.findOne({ email: req.body.email })
     if (user != null) {
         console.log(user.password);//user data base//
         let check = await bcrypt.compare(req.body.password, user.password)

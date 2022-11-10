@@ -5,8 +5,12 @@ function company(req, res) {
 function companyAdd(req, res) {
     res.send("hello")
 }
-function newCompany(req, res) {
+function companyAdd(req, res) {
     res.send("mainpage")
 }
 
-module.exports = { company, companyAdd, newCompany }
+function signup(req, res) {
+    res.render("company/signup")//to render hbs page //
+}
+
+module.exports = { company, companyAdd, signup }
