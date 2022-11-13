@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('https://media.istockphoto.com/photos/woman-hand-using-keyboard-laptop-with-loading-bar-icon-on-wood-table-picture-id1225318860?b=1&k=20&m=1225318860&s=612x612&w=0&h=vlZNxi_jw2V1yxK2Yr60URIAGV1jOhSoCeKAFQ8TZ9E=');
+    background-image: url('https://img.freepik.com/premium-photo/logging-inquiries-through-multiple-digital-portals-closeup-shot-call-centre-agent-using-cellphone-while-working-office-with-her-colleague-background_590464-60475.jpg?w=2000');
     background-position: center;
     background-size: cover;
     margin-top: 40px;
@@ -38,7 +38,6 @@ form {
     width: 100%;
     height: 100px;
 }
-
 .name {
     margin-left: 25px;
     margin-top: 30px;
@@ -54,7 +53,7 @@ form {
     top: -37px;
     line-height: 40px;
     border-radius: 6px;
-    padding: 0 22px;
+    padding: 0 70px;
     font-size: 16px;
 }
 
@@ -64,7 +63,7 @@ form {
     top: -80px;
     line-height: 40px;
     border-radius: 6px;
-    padding: 0 22px;
+    padding: 0  56px;
     font-size: 16px;
     color: #555;
 }
@@ -113,18 +112,29 @@ button:hover{
     top: -37px;
     line-height: 40px;
     border-radius: 6px;
-    padding: 0 22px;
+    padding: 0  70px;
     font-size: 16px;
-    width: 400px;
 }
 .password{
+
+
     position: relative;
     left: 200px;
     top: -37px;
     line-height: 40px;
     border-radius: 6px;
-    padding: 0 22px;
+    padding: 0 70px;
     font-size: 16px;
-    width: 400px;
 
+}
+.email{
+
+
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0  70px;
+    font-size: 16px;
 }
