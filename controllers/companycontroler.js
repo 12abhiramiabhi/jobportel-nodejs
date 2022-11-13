@@ -13,4 +13,4 @@ function signup(req, res) {
     res.render("company/signup")//to render hbs page //
 }
 
-module.exports = { company, companyAdd, signup }
+module.exports = { company, companyAdd, signup }g
