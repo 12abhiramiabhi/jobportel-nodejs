@@ -97,6 +97,9 @@ text-decoration: underline;
 .company{
     margin-bottom: 15PX;
 }
+.emaill{
+    margin-bottom: 15px;
+}
 input[type="submit"]{
     background-color: #3498db;
     border: 1px solid #2691d9;
