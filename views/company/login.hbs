@@ -1,56 +1,54 @@
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
 
 <link rel="stylesheet" href="stylesheets/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <div class="bg-img">
-        <div class="content">
-            <header>Login page</header>
-            <form action="#">
-            
-                <div class="field">
-                    <span class="fa fa-user"></span>
-                    <input type="text" placeholder="email or phone">
+<div class="bg-img">
+    <div class="content">
+        <header>Login page</header>
+        <form action="/login" method="post">
+
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" placeholder="email or phone" name="email">
+            </div>
+
+            <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="password" required placeholder="password">
+                <span class="show">show</span>
+            </div>
+            <div class="pass">
+                <a href="#">forget password?</a>
+            </div>
+            <div class="field">
+                <input type="submit" value="Sign Up">
+            </div>
+            <div class="login">Sign Up with</div>
+            <div class="link">
+                <div class="facebook">
+                    <i class="fab fa-facebook-f"><span>facebook</span></i>
                 </div>
-                
-                <div class="field space">
-                    <span class="fa fa-lock"></span>
-                    <input type="password" class="password" required placeholder="password">
-                    <span class="show">show</span>
+                <div class="instagram">
+                    <i class="fab fa-instagram"><span>instagram</span></i>
                 </div>
-                <div class="pass">
-                    <a href="#">forget password?</a>
-                </div>
-                <div class="field">
-                    <input type="submit"  value="Sign Up">
-                </div>
-<div class="login">Sign Up with</div>
-<div class="link">
-    <div class="facebook">
-        <i class="fab fa-facebook-f"><span>facebook</span></i>
-    </div>
-    <div class="instagram">
-        <i class="fab fa-instagram"><span>instagram</span></i>
+            </div>
+            <div class="signup">don't have account?
+                <a href="#">login now</a>
+            </div>
+        </form>
     </div>
 </div>
-<div class="signup">don't have account?
-    <a href="#">login now</a>
-</div>
-            </form>
-        </div>
-    </div>
-    <script>
-        const pass_field=document.querySelector('.password')
-        const show_btn=document.querySelector('.show')
-        show_btn.addEventListener('click',function(){
-            if(pass_field.type=== "password"){
-                pass_field.type ="text";
-            }
-        })
-    </script>
+<script>
+    const pass_field = document.querySelector('.password')
+    const show_btn = document.querySelector('.show')
+    show_btn.addEventListener('click', function () {
+        if (pass_field.type === "password") {
+            pass_field.type = "text";
+        }
+    })
+</script>

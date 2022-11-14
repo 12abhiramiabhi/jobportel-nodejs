@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const taskSchema = mongoose.Schema({
+const companySchema = mongoose.Schema({
     name: {
         maxLength: 50,
         require: true,
@@ -22,5 +22,6 @@ const taskSchema = mongoose.Schema({
         require: true,
         type: Number,
     }
+
 })
-module.exports = mongoose.model('user', taskSchema);
+module.exports = mongoose.model('company', companySchema);
