@@ -29,7 +29,24 @@ const signupcompany = async function (req, res) {
     }
 }
 
+const loginCompany = async function(req,res){
+    console.log(req.body);
+    let company = await companymodel.findOne({email:req.body.email})
+    if (company != null){
+        console.log(company.password);
+        console.log(req.body.password);
+        let check = await bcrypt.compare(req.body.password,company.password);
+        console.log(check);
+        if (check){
+            req.session.company = company;
+            console.log(req.session.company);
+            res.redirect("/company");
+        }else{
+            res.redirect("/company/login")
+        }
+    }
+}
 
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany }
+module.exports = { company, companyAdd, signup, login, signupcompany,loginCompany }

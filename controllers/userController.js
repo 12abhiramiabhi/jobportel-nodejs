@@ -52,6 +52,7 @@ async function dologin(req, res,) {
 
     } else {
         res.redirect("/login")
+        
     }
 }
 module.exports = { getIndexPage, signupage, login, dosignup, dologin, homePage }
