@@ -30,6 +30,7 @@ async function dosignup(req, res, next) {
         res.redirect("/login")
     } catch (error) {
         console.log(error);
+        res.redirect("/signup")
     }
 }
 
@@ -52,7 +53,7 @@ async function dologin(req, res,) {
 
     } else {
         res.redirect("/login")
-        
+
     }
 }
 module.exports = { getIndexPage, signupage, login, dosignup, dologin, homePage }
