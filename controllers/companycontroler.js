@@ -19,6 +19,15 @@ function login(req, res) {
     res.render("company/login")
 }
 
+function homePage(req, res) {
+    console.log(req.session.company)
+    if (req.session.company) {
+        res.render('home')
+    } else {
+        res.redirect("/company/login")
+    }
+}
+
 const signupcompany = async function (req, res) {
     console.log(req.body);
     try {
@@ -40,13 +49,16 @@ const loginCompany = async function(req,res){
         if (check){
             req.session.company = company;
             console.log(req.session.company);
-            res.redirect("/company");
+            res.redirect("/home");
         }else{
             res.redirect("/company/login")
         }
+    }else{
+        res.redirect('/company/login')
     }
 }
 
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany,loginCompany }
+
+module.exports = { company, companyAdd, signup, login, signupcompany,loginCompany,homePage }
