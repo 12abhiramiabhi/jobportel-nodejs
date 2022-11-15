@@ -19,6 +19,7 @@ function login(req, res) {
     res.render("company/login")
 }
 
+
 function homePage(req, res) {
     console.log(req.session.company)
     if (req.session.company) {
@@ -32,6 +33,13 @@ function homePage(req, res) {
 function getAddJobPage(req, res) {
     res.render("company/addjob")
 }
+
+const addjobCompany = async function(req,res){
+    console.log(req.body);
+       let addjob =await jobModel .findOne({name:req.body.name});
+       console.log(addjob);
+}
+
 const signupcompany = async function (req, res) {
     console.log(req.body);
     try {
@@ -70,4 +78,4 @@ const loginCompany = async function (req, res) {
 }
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage }
+module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage,addjobCompany }
