@@ -15,6 +15,7 @@ router.post("/login", loginCompany)
 
 router.get('/home', homePage)
 
+
 router.get("/addjob", getAddJobPage)
 
 router.post("/addjob",addjobCompany)

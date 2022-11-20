@@ -1,4 +1,6 @@
 const companymodel = require("../model/companymodel")
+const addjob = require ("../model/addjob")
+
 const bcrypt = require('bcrypt');
 
 function company(req, res) {
