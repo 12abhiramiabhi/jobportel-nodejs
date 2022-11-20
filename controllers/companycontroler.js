@@ -1,9 +1,8 @@
 const companymodel = require("../model/companymodel")
-<<<<<<< HEAD
+
 const addjob = require ("../model/addjob")
-=======
+
 const addjobmodel = require("../model/addjobmodel")
->>>>>>> e4c47740f287074a34b786b3791773fb900c0169
 
 const bcrypt = require('bcrypt');
 
