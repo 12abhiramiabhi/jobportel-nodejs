@@ -28,6 +28,10 @@ function viewJob(req, res) {
     res.render("company/viewjob")
 }
 
+function companyView(req,res){
+    res.render("company/companyview")
+}
+
 function homePage(req, res) {
     console.log(req.session.company)
     if (req.session.company) {
@@ -91,4 +95,4 @@ const loginCompany = async function (req, res) {
 }
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob }
+module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob,companyView }
