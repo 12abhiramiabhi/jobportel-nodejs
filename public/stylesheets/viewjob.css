@@ -7,7 +7,7 @@
 .navbar-brand {
     font-size: 2rem;
     font-family: 'Dancing Script', cursive;
-    color: red;
+    color: rgb(10, 10, 94);
 }
 
 .nav-link {
@@ -134,17 +134,13 @@
     transition: all 0.4s;
 }
 
-.resume {
-    background: linear-gradient(rgba(4, 11, 75, 0.719), rgba(4, 26, 100, 0.73)), url("https://realconnectcc.com/assets/img/solutions/customer-experience/RC_customersupport_A1_Rectangle_5_pattern.jpg");
-    background-size: cover;
-    height: 90vh;
-    width: 100%;
+.card-body {
+    height: 250px;
+    box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
 }
 
-
-/* .para{
-    color: aliceblue;
+button {
+    margin: 50px;
 }
-.para2{
-    color: aliceblue;
-} */

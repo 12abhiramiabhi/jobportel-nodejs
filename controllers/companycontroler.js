@@ -1,6 +1,6 @@
 const companymodel = require("../model/companymodel")
 
-const addjob = require ("../model/addjob")
+
 
 const addjobmodel = require("../model/addjobmodel")
 
@@ -24,6 +24,9 @@ function login(req, res) {
     res.render("company/login")
 }
 
+function viewJob(req, res) {
+    res.render("company/viewjob")
+}
 
 function homePage(req, res) {
     console.log(req.session.company)
@@ -62,6 +65,7 @@ const signupcompany = async function (req, res) {
 
 }
 
+
 const loginCompany = async function (req, res) {
     // console.log(req.body);
     try {
@@ -87,4 +91,4 @@ const loginCompany = async function (req, res) {
 }
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany }
+module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob }

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { company, signup, login, signupcompany, loginCompany, homePage, getAddJobPage,addjobCompany } = require("../controllers/companycontroler")
+const { company, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob } = require("../controllers/companycontroler")
 
 
 router.get("/", company)
@@ -18,6 +18,8 @@ router.get('/home', homePage)
 
 router.get("/addjob", getAddJobPage)
 
-router.post("/addjob",addjobCompany)
+router.post("/addjob", addjobCompany)
+
+router.get("/viewjob", viewJob)
 
 module.exports = router;
