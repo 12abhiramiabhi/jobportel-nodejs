@@ -47,12 +47,7 @@ async function dologin(req, res,) {
 
 
 function homePage(req, res) {
-    console.log(req.session.user)
-    if (req.session.user) {
-        res.render('home')
-    } else {
-        res.redirect("/login")
-    }
+    res.render('home')
 }
 
 
