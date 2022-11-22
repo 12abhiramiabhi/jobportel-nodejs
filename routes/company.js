@@ -19,6 +19,6 @@ router.get('/home', checkCompanyLoggedIn, homePage)
 router.get("/addjob", checkCompanyLoggedIn, getAddJobPage)
 router.post("/addjob", checkCompanyLoggedIn, addjobCompany)
 
-router.get("/companyview", checkCompanyLoggedIn, companyView)
+router.get("/view-jobs", checkCompanyLoggedIn, companyView)
 
 module.exports = router;
