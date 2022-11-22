@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView } = require("../controllers/companycontroler")
+const { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView } = require("../controllers/companycontroler");
+const checkCompanyLoggedIn = require('../middlewares/checkCompanyLoggedIn');
 
 
 
@@ -10,11 +11,14 @@ router.post("/signup", signupcompany);
 router.get("/login", login)
 router.post("/login", loginCompany)
 
-router.get('/home', homePage)
+// do not apply middleware to the above routes
 
-router.get("/addjob", getAddJobPage)
-router.post("/addjob", addjobCompany)
 
-router.get("/companyview", companyView)
+router.get('/home', checkCompanyLoggedIn, homePage)
+
+router.get("/addjob", checkCompanyLoggedIn, getAddJobPage)
+router.post("/addjob", checkCompanyLoggedIn, addjobCompany)
+
+router.get("/companyview", checkCompanyLoggedIn, companyView)
 
 module.exports = router;
