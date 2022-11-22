@@ -24,12 +24,14 @@ function login(req, res) {
     res.render("company/login")
 }
 
-function viewJob(req, res) {
-    res.render("company/viewjob")
+async function viewJob(req, res) {
+    let allJobs = await addjobmodel.find()
+    res.render("company/viewjob", { allJobs })
 }
 
-function companyView(req,res){
-    res.render("company/companyview")
+async function companyView(req, res) {
+    let allJobs = await addjobmodel.find({ companyId: req.session.company._id })
+    res.render("company/companyview", { allJobs })
 }
 
 function homePage(req, res) {
@@ -44,6 +46,7 @@ function homePage(req, res) {
 
 function getAddJobPage(req, res) {
     res.render("company/addjob")
+
 }
 
 const addjobCompany = async function (req, res) {
@@ -55,6 +58,7 @@ const addjobCompany = async function (req, res) {
     await addjobmodel.create(req.body)
     res.redirect("/company/home")
 }
+
 
 const signupcompany = async function (req, res) {
     console.log(req.body);
@@ -95,4 +99,4 @@ const loginCompany = async function (req, res) {
 }
 
 
-module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob,companyView }
+module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob, companyView }

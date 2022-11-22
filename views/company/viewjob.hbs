@@ -45,112 +45,35 @@
 <section class="ceta py-5">
     <div class="container-fluid py-5 text-center">
         <p class="red">job details </p>
-        <h1>This are the new jobs</h1>
+        <h1>These are the new jobs</h1>
         <div class="row py-5">
             <div class="col-lg-11 m-auto pt-3">
                 <div class="row py-5">
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-                                    job title:
-                                </h6>
-                                <h6>
-                                    discription: </h6>
-                                <h6> company name: </h6>
-                                </h6> date:
-                                </h6>
-                                <h6 class="red"></h6>
-                                <button>apply</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
 
-                                </h6>
-                                <h6 class="red"></h6>
-                                <button>apply</button>
-                            </div>
-                        </div>
-                    </div>
+                    {{#each allJobs}}
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
                                 <img src="" class="img-fluid" alt="">
                                 <h6>
-
+                                    job title:{{name}}
                                 </h6>
-                                <h6 class="red"></h6>
-                                <button>apply</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
                                 <h6>
+                                    discription:{{
+                                    jobDiscription}} </h6>
+                                <h6> company name:{{
+                                    companyName}} </h6>
+                                </h6> date:{{
+                                jobPostedDate}}
+                                </h6>
+                                <h6 class="red"></h6>
+                                <button>apply </button>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
 
-                                </h6>
-                                <button>apply</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card ">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
 
-                                </h6>
-                                <button>apply</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-
-                                </h6>
-                                <button>apply</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-
-                                </h6>
-                                <button>apply</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-                                </h6>
-                                <button>apply</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 m-auto">

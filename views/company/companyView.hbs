@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">companies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">blog</a>
+                    <a class="nav-link" href="/company/addjob">addjob</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" href="#">
@@ -49,107 +49,26 @@
         <div class="row py-5">
             <div class="col-lg-11 m-auto pt-3">
                 <div class="row py-5">
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-                                    job title:
-                                </h6>
-                                <h6>
-                                     vacancy :</h6>
-                                <h6> last date :</h6>
-                                </h6>status :</h6>
-                                <h6 class="red"></h6>
-                                <button>close vacancy</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
 
-                                </h6>
-                                <h6 class="red"></h6>
-                                <button>close vacancy</button>
-                            </div>
-                        </div>
-                    </div>
+                    {{#each allJobs}}
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
                                 <img src="" class="img-fluid" alt="">
                                 <h6>
-
+                                    Job Title: {{name}}
                                 </h6>
-                                <h6 class="red"></h6>
-                                <button>close vacancy</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
                                 <h6>
+                                    vacancy : {{vacancies}}</h6>
+                                <h6> last date :{{LastApplyDate}}</h6>
+                                </h6>status : {{status}}</h6>
+                                <h6 class="red"></h6>
+                                <button>close vacancy</button>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
 
-                                </h6>
-                                <button>close vacancy</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card ">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-
-                                </h6>
-                                <button>close vacancy</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-
-                                </h6>
-                                <button>close vacancy</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-
-                                </h6>
-                                <button>close vacancy</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="" class="img-fluid" alt="">
-                                <h6>
-                                </h6>
-                                <button>close vacancy</button>
-                                <h6 class="red"></h6>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5 m-auto">

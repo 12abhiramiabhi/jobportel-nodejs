@@ -2,26 +2,9 @@ const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
 
 
-function getIndexPage(req, res, next) {
-    res.render('index', { title: 'Express', myName: 'abhiramiiii', name: 'anu', std: { mark: 100 } });
-}
 function signupage(req, res, next) {
     res.render('signup',);
 }
-function login(req, res, next) {
-    res.render('login',);
-}
-
-function homePage(req, res) {
-    console.log(req.session.user)
-    if (req.session.user) {
-        res.render('home')
-    } else {
-        res.redirect("/login")
-    }
-}
-
-
 async function dosignup(req, res, next) {
     console.log(req.body)//form le frond end le data 
     try {
@@ -34,6 +17,10 @@ async function dosignup(req, res, next) {
     }
 }
 
+
+function login(req, res, next) {
+    res.render('login',);
+}
 async function dologin(req, res,) {
     // console.log(req.body);
     console.log(req.body.password);//form nn frond end//
@@ -56,4 +43,14 @@ async function dologin(req, res,) {
 
     }
 }
-module.exports = { getIndexPage, signupage, login, dosignup, dologin, homePage }
+
+
+function homePage(req, res) {
+    console.log(req.session.user)
+    if (req.session.user) {
+        res.render('home')
+    } else {
+        res.redirect("/login")
+    }
+}
+module.exports = { signupage, login, dosignup, dologin, homePage }
