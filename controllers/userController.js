@@ -1,5 +1,6 @@
 const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
+const addjobmodel = require("../model/addjobmodel");
 
 
 function signupage(req, res, next) {
@@ -53,4 +54,12 @@ function homePage(req, res) {
         res.redirect("/login")
     }
 }
-module.exports = { signupage, login, dosignup, dologin, homePage }
+
+
+async function viewJob(req, res) {
+    let allJobs = await addjobmodel.find()
+    res.render("viewjob", { allJobs })
+}
+
+
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob }

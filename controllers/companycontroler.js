@@ -1,65 +1,13 @@
 const companymodel = require("../model/companymodel")
-
-
-
 const addjobmodel = require("../model/addjobmodel")
 
 const bcrypt = require('bcrypt');
 
-function company(req, res) {
-    res.send("hai")
-}
 
-function companyAdd(req, res) {
-    res.send("hello")
-}
-function companyAdd(req, res) {
-    res.send("mainpage")
-}
 
 function signup(req, res) {
     res.render("company/signup")
 }
-function login(req, res) {
-    res.render("company/login")
-}
-
-async function viewJob(req, res) {
-    let allJobs = await addjobmodel.find()
-    res.render("company/viewjob", { allJobs })
-}
-
-async function companyView(req, res) {
-    let allJobs = await addjobmodel.find({ companyId: req.session.company._id })
-    res.render("company/companyview", { allJobs })
-}
-
-function homePage(req, res) {
-    console.log(req.session.company)
-    if (req.session.company) {
-        res.render('company/home', { company: req.session.company })
-
-    } else {
-        res.redirect("/company/login")
-    }
-}
-
-function getAddJobPage(req, res) {
-    res.render("company/addjob")
-
-}
-
-const addjobCompany = async function (req, res) {
-    console.log(req.body);
-    req.body.companyId = req.session.company._id
-    req.body.companyName = req.session.company.name
-    req.body.jobPostedDate = new Date().toLocaleDateString()
-    console.log(req.body);
-    await addjobmodel.create(req.body)
-    res.redirect("/company/home")
-}
-
-
 const signupcompany = async function (req, res) {
     console.log(req.body);
     try {
@@ -70,12 +18,13 @@ const signupcompany = async function (req, res) {
         console.log(error);
         res.redirect("/company/signup")
     }
-
 }
+// ---------------------------------------------------------
 
-
+function login(req, res) {
+    res.render("company/login")
+}
 const loginCompany = async function (req, res) {
-    // console.log(req.body);
     try {
         let company = await companymodel.findOne({ email: req.body.email })
         if (company != null) {
@@ -98,5 +47,45 @@ const loginCompany = async function (req, res) {
     }
 }
 
+// ------------------------------------------------------------------
 
-module.exports = { company, companyAdd, signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, viewJob, companyView }
+function homePage(req, res) {
+    console.log(req.session.company)
+    if (req.session.company) {
+        res.render('company/home', { company: req.session.company })
+    } else {
+        res.redirect("/company/login")
+    }
+}
+// ------------------------------------------------------------------
+
+
+function getAddJobPage(req, res) {
+    res.render("company/addjob")
+}
+const addjobCompany = async function (req, res) {
+    console.log(req.body);
+    req.body.companyId = req.session.company._id
+    req.body.companyName = req.session.company.name
+    req.body.jobPostedDate = new Date().toLocaleDateString()
+    console.log(req.body);
+    await addjobmodel.create(req.body)
+    res.redirect("/company/home")
+}
+
+
+async function companyView(req, res) {
+    let allJobs = await addjobmodel.find({ companyId: req.session.company._id })
+    res.render("company/companyview", { allJobs })
+}
+
+
+
+
+
+
+
+
+
+
+module.exports = { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView }
