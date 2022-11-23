@@ -50,23 +50,22 @@
             <div class="col-lg-11 m-auto pt-3">
                 <div class="row py-5">
 
-                    {{#each allJobs}}
+                    {{#each allcompany}}
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
                                 <img src="" class="img-fluid" alt="">
                                 <h6>
-                                    job title:{{name}}
+                                {{name}}
                                 </h6>
                                 <h6>
-                                    discription:{{
-                                    jobDiscription}} </h6>
-                                <h6> company name:{{
-                                    companyName}} </h6>
-                                </h6> date:{{
-                                jobPostedDate}}
+                                    {{
+                                    email}} </h6>
+                                <h6> {{
+                                    password}} </h6>
+                                </h6>{{
+                                 phoneNumber}}
                                 </h6>
-                                <h6>salary:{{ salary}}</h6>
                                 <h6 class="red"></h6>
                                 <button>apply </button>
                             </div>

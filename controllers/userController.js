@@ -1,6 +1,7 @@
 const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
 const addjobmodel = require("../model/addjobmodel");
+const companymodel = require("../model/companymodel");
 
 
 function signupage(req, res, next) {
@@ -56,5 +57,12 @@ async function viewJob(req, res) {
     res.render("viewjob", { allJobs })
 }
 
+async function userCompany(req,res){
+    let allcompany =await companymodel.find()
+    res.render("userCompanyPage",{allcompany})
+}
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob }
+ 
+
+
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany}
