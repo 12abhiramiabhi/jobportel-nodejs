@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { signupage, login, dosignup, dologin, homePage, viewJob, userCompany} = require("../controllers/userController");
+const { signupage, login, dosignup, dologin, homePage, viewJob, userCompany,updateFormUser} = require("../controllers/userController");
 const checkuserLoggedIn = require('../middlewares/checkUserLoggedIn');
 
 
@@ -15,6 +15,7 @@ router.post('/login', dologin)
 router.get('/home', checkuserLoggedIn, homePage)
 router.get('/view-jobs', checkuserLoggedIn, viewJob)
 router.get('/usercompanypage',userCompany)
+router.get('/updateFormUser',updateFormUser)
 
 
 module.exports = router;

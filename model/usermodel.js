@@ -21,6 +21,27 @@ const taskSchema = mongoose.Schema({
         maxLength: 50,
         require: true,
         type: Number,
+    },
+    resume:{
+        maxLength:50,
+        type:String,
+    },
+    address:{
+        maxLength:50,
+        type:String
+    },
+    experience:{
+        maxLength:50,
+        type:String
+    },
+    skills:{
+        maxLength:50,
+        type:String,
+    },
+    image:{
+        type: String,
+        maxLength: 50
     }
+
 })
 module.exports = mongoose.model('user', taskSchema);

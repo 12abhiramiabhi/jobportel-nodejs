@@ -62,7 +62,9 @@ async function userCompany(req,res){
     res.render("userCompanyPage",{allcompany})
 }
 
- 
+ function updateFormUser(req,res){
+    res.render("updateFormUser")
+ }
 
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany}
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany,updateFormUser}
