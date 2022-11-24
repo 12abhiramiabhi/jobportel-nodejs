@@ -79,13 +79,13 @@ async function companyView(req, res) {
     res.render("company/companyview", { allJobs })
 }
 
+function updateForm(req, res) {
+    res.render("company/updateForm")
+}
 
 
 
 
 
 
-
-
-
-module.exports = { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView }
+module.exports = { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView, updateForm }
