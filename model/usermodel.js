@@ -2,18 +2,18 @@ const mongoose = require("mongoose")
 const taskSchema = mongoose.Schema({
     name: {
         maxLength: 50,
-        require: true,
+        required: true,
         type: String,
     },
     email: {
         maxLength: 50,
-        require: true,
+        required: true,
         type: String,
         unique: true
     },
     password: {
         maxLength: 200,
-        require: true,
+        required: true,
         type: String,
 
     },
@@ -22,53 +22,61 @@ const taskSchema = mongoose.Schema({
         require: true,
         type: Number,
     },
-<<<<<<< HEAD
+
     resume: {
         maxLength: 50,
         require: true,
-        type: Number,
+        type: String,
     },
     address: {
 
         type: String,
         maxlength: 40,
+        required: true,
     },
     experience: {
 
         type: String,
         maxlength: 40,
+        required: true,
     },
     skills: {
 
         type: String,
         maxlength: 40,
+        required: true,
     },
     file: {
 
         type: String,
         maxlength: 40,
-=======
+        required: true,
+    } ,
     resume:{
         maxLength:50,
         type:String,
+        required: true,
     },
     address:{
         maxLength:50,
-        type:String
+        type:String,
+        required: true,
     },
     experience:{
         maxLength:50,
-        type:String
+        type:String,
+        required: true,
     },
     skills:{
         maxLength:50,
         type:String,
+        required: true,
     },
     image:{
         type: String,
-        maxLength: 50
->>>>>>> f5284b64c4695143d2c292b0cb03b37bf27c052b
-    }
+        maxLength: 50,
+        required: true,
+    },
 
 })
 module.exports = mongoose.model('user', taskSchema);

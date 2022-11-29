@@ -2,55 +2,55 @@ const mongoose = require("mongoose")
 const jobSchema = mongoose.Schema({
     name: {
         maxLength: 25,
-        require: true,
+        required: true,
         type: String,
     },
     jobDiscription: {
         maxLength: 250,
-        require: true,
+        required: true,
         type: String,
 
     },
     salary: {
         maxLength: 200,
-        require: true,
+        required: true,
         type: Number,
 
     },
     experience: {
         maxLength: 500,
-        require: true,
+        required: true,
         type: String,
     },
     vacancies: {
         maxLength: 500,
-        require: true,
+        required: true,
         type: String,
     },
     companyName: {
         maxLength: 60,
         type: String,
-        require: true,
+        required: true,
     },
     companyId: {
         maxLength: 60,
         type: String,
-        require: true,
+        required: true,
     },
     status: {
         maxLength: 70,
         type: String,
-        require: true,
+        required: true,
         default: "open"
     },
     jobPostedDate: {
         maxLength: 70,
         type: String,
-        require: true
+        required: true
     },
     LastApplyDate: {
         maxLength: 20,
-        require: true,
+        required: true,
         type: Date,
     }
 })

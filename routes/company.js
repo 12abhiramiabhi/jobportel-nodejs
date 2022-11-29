@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView, updateForm } = require("../controllers/companycontroler");
+const { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView,updateProfile,updateProfilePage,
+companyProfile} = require("../controllers/companycontroler");
 const checkCompanyLoggedIn = require('../middlewares/checkCompanyLoggedIn');
 
 
@@ -21,5 +22,9 @@ router.post("/addjob", checkCompanyLoggedIn, addjobCompany)
 
 router.get("/view-jobs", checkCompanyLoggedIn, companyView)
 
-router.get("/updateForm", updateForm)
+
+router.get("/updateProfilePage",updateProfilePage)
+router.post("/updateProfile",updateProfile)
+router.get("/profile",companyProfile)
+
 module.exports = router;

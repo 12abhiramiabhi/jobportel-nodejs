@@ -63,7 +63,7 @@ async function userCompany(req, res) {
     res.render("userCompanyPage", { allcompany })
 }
 
-<<<<<<< HEAD
+
 
 async function applyJOB(req, res) {
     console.log(req.params.id);
@@ -87,13 +87,21 @@ async function applyJOB(req, res) {
     res.redirect("/home")
 }
 
+const userUpdateForm = async function(req,res){
+    res.render("/updateFormUser")
+}
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany, applyJOB }
-=======
- function updateFormUser(req,res){
-    res.render("updateFormUser")
- }
+const updateFormProfile =async function(req,res){
+    req.body.profileUpdate =true
+    await userModel.create(req.body)
+    {_id:req.session.user._id}
+    req.file.image.mv("./public/image/userProfile/" + req.session.user._id+".pdf")
+}
+
+const userProfile = async function(req,res){
+    res.render("/userprofile")
+}
 
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany,updateFormUser}
->>>>>>> f5284b64c4695143d2c292b0cb03b37bf27c052b
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany,userUpdateForm,updateFormProfile,userProfile, applyJOB}
+

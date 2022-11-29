@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const jobApplicationSchema = mongoose.Schema({
     userName: {
-        require: true,
+        required: true,
         type: String,
         maxlength: 40,
     },
@@ -10,40 +10,44 @@ const jobApplicationSchema = mongoose.Schema({
         maxlength: 40,
     },
     userPhone: {
-        require: true,
+        required: true,
         type: String,
         maxlength: 50
     },
     userAddress: {
-        require: true,
+        required: true,
         type: String,
         maxlength: 40,
     },
     companyId: {
         type: String,
         maxLength: 50,
-        require: true,
+        required: true,
     },
     companyName: {
         type: String,
         maxLength: 50,
-        require: true,
+        required: true,
     },
     status: {
         type: String,
-        default: "applied"
+        default: "applied",
+        required: true,
     },
     experience: {
         type: String,
         maxLength: 50,
+        required: true,
     },
     jobTitle: {
         type: String,
         maxLength: 50,
+        required: true,
     },
     jobId: {
         type: String,
         maxLength: 50,
+        required: true,
     }
 })
 module.exports = mongoose.model("jobapplication", jobApplicationSchema)
