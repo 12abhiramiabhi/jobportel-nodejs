@@ -22,6 +22,7 @@ const taskSchema = mongoose.Schema({
         require: true,
         type: Number,
     },
+<<<<<<< HEAD
     resume: {
         maxLength: 50,
         require: true,
@@ -46,6 +47,27 @@ const taskSchema = mongoose.Schema({
 
         type: String,
         maxlength: 40,
+=======
+    resume:{
+        maxLength:50,
+        type:String,
+    },
+    address:{
+        maxLength:50,
+        type:String
+    },
+    experience:{
+        maxLength:50,
+        type:String
+    },
+    skills:{
+        maxLength:50,
+        type:String,
+    },
+    image:{
+        type: String,
+        maxLength: 50
+>>>>>>> f5284b64c4695143d2c292b0cb03b37bf27c052b
     }
 
 })

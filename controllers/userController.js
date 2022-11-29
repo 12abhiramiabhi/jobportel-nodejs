@@ -63,6 +63,7 @@ async function userCompany(req, res) {
     res.render("userCompanyPage", { allcompany })
 }
 
+<<<<<<< HEAD
 
 async function applyJOB(req, res) {
     console.log(req.params.id);
@@ -88,3 +89,11 @@ async function applyJOB(req, res) {
 
 
 module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany, applyJOB }
+=======
+ function updateFormUser(req,res){
+    res.render("updateFormUser")
+ }
+
+
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany,updateFormUser}
+>>>>>>> f5284b64c4695143d2c292b0cb03b37bf27c052b
