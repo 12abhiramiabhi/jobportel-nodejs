@@ -2,6 +2,7 @@ const userModel = require("../model/usermodel")
 const bcrypt = require('bcrypt');
 const addjobmodel = require("../model/addjobmodel");
 const companymodel = require("../model/companymodel");
+const jobapplicationmodel = require("../model/jobapplicationmodel");
 
 
 function signupage(req, res, next) {
@@ -57,12 +58,33 @@ async function viewJob(req, res) {
     res.render("viewjob", { allJobs })
 }
 
-async function userCompany(req,res){
-    let allcompany =await companymodel.find()
-    res.render("userCompanyPage",{allcompany})
+async function userCompany(req, res) {
+    let allcompany = await companymodel.find()
+    res.render("userCompanyPage", { allcompany })
 }
 
- 
+
+async function applyJOB(req, res) {
+    console.log(req.params.id);
+    let jobDetailes = await addjobmodel.findOne({ _id: req.params.id })
+    console.log(jobDetailes.name);
+    let application = {
+        userName: req.session.user.name,
+        userEmail: req.session.user.email,
+        userphoneNumber: req.session.user.phone,
+        userAddress: req.session.user.address,
+        userexprience: req.session.user.experience,
+        companyId: jobDetailes.companyId,
+        companyName: jobDetailes.companyName,
+        jobTitle: jobDetailes.name,
+        jobId: jobDetailes._id
+
+    }
+    console.log(application);
+
+    await jobapplicationmodel.create(application)
+    res.redirect("/home")
+}
 
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob,userCompany}
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany, applyJOB }
