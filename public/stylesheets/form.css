@@ -106,6 +106,7 @@ button {
 
 button:hover {
     background-color: #5390f5;
+    color: aquamarine;
 }
 
 .number {
