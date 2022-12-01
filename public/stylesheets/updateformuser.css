@@ -3,14 +3,13 @@ h1 {
 }
 
 body {
-    /* background-image: url("https://www.ndtv.com/education/cache-static/media/presets/625X400/article_images/2022/9/29/cuet_pg__featured-image.jpg")no-repeat; */
     background: url("https://st4.depositphotos.com/14101486/28582/i/600/depositphotos_285825710-stock-photo-human-resource-management-and-recruitment.jpg")no-repeat;
     font-size: 30px;
     background-size: cover;
 }
 
 button {
-    font-size: 28px;
+    font-size: 20px;
     position: relative;
     background-color: black;
     color: white;
@@ -27,10 +26,13 @@ button:hover {
     border: none;
     outline: none;
     transition: all 0.4s;
-
 }
 
 .table {
     border-radius: 1rem;
     color: black;
+}
+
+.form {
+    color: brown;
 }

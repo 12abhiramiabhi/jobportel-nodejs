@@ -66,13 +66,13 @@ async function userCompany(req, res) {
 
 
 async function applyJOB(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     let jobDetailes = await addjobmodel.findOne({ _id: req.params.id })
-    console.log(jobDetailes.name);
+    console.log(req.session.user);
     let application = {
         userName: req.session.user.name,
         userEmail: req.session.user.email,
-        userphoneNumber: req.session.user.phone,
+        userPhone: req.session.user.phoneNumber,
         userAddress: req.session.user.address,
         userexprience: req.session.user.experience,
         companyId: jobDetailes.companyId,
@@ -87,21 +87,33 @@ async function applyJOB(req, res) {
     res.redirect("/home")
 }
 
-const userUpdateForm = async function(req,res){
-    res.render("/updateFormUser")
+// const userUpdateForm = async function (req, res) {
+//     res.render("updateFormUser")
+// }
+
+function userUpdateForm(req, res) {
+    res.render("updateFormUser")
 }
 
-const updateFormProfile =async function(req,res){
-    req.body.profileUpdate =true
-    await userModel.create(req.body)
-    {_id:req.session.user._id}
-    req.file.image.mv("./public/image/userProfile/" + req.session.user._id+".pdf")
-}
+const updateFormProfile = async function (req, res) {
+    req.body.profileUpdate = true;
+    let newUser = await userModel.findOneAndUpdate({
+        _id: req.session.user._id
+    }, req.body, { new: true });
+    await req.files.image.mv("./public/images/userProfile/" + req.session.user._id + ".jpg");
+    console.log(newUser);
+    req.session.user = newUser;
+    res.redirect("/home");
 
-const userProfile = async function(req,res){
-    res.render("/userprofile")
-}
+};
 
 
-module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany,userUpdateForm,updateFormProfile,userProfile, applyJOB}
+const userProfile = async function (req, res) {
+    res.render("userprofile", {
+        user: req.session.user,
+    })
+};
+
+
+module.exports = { signupage, login, dosignup, dologin, homePage, viewJob, userCompany, userUpdateForm, updateFormProfile, userProfile, applyJOB }
 

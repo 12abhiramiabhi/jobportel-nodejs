@@ -79,27 +79,30 @@ async function companyView(req, res) {
     res.render("company/companyview", { allJobs })
 }
 
-function updateProfilePage(req,res){
+function updateProfilePage(req, res) {
     res.render("company/updateProfilePage")
 }
 
-const updateProfile = async function(req,res){
-    console.log(req.body,req.files)
-    req.body.profileUpdated =true;
+const updateProfile = async function (req, res) {
+    req.body.profileUpdated = true;
     let newCompany = await companymodel.findOneAndUpdate({
-        _id: req.session.company._id},req.body,{new:true});
-        req.files.image.mv("./public/image/companyProfile/" + req.session.company._id + ".jpg");
-        console.log(newCompany);
-        req.session.company = newCompany;
-        res.redirect("/company/home");
+        _id: req.session.company._id
+    }, req.body, { new: true });
+    await req.files.image.mv("./public/images/companyProfile/" + req.session.company._id + ".jpg");
+    console.log(newCompany);
+    req.session.company = newCompany;
+    res.redirect("/company/home");
+
 };
-const companyProfile =function(req,res){
-    res.render("company/profile",{
-       company: req.session.company, 
+const companyProfile = function (req, res) {
+    res.render("company/profile", {
+        company: req.session.company,
     });
 };
 
 
 
-module.exports = { signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView, updateProfile,
-updateProfilePage,companyProfile }
+module.exports = {
+    signup, login, signupcompany, loginCompany, homePage, getAddJobPage, addjobCompany, companyView, updateProfile,
+    updateProfilePage, companyProfile
+}

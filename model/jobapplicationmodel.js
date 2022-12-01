@@ -34,11 +34,6 @@ const jobApplicationSchema = mongoose.Schema({
         default: "applied",
         required: true,
     },
-    experience: {
-        type: String,
-        maxLength: 50,
-        required: true,
-    },
     jobTitle: {
         type: String,
         maxLength: 50,
