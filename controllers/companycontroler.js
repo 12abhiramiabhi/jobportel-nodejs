@@ -84,10 +84,11 @@ function updateProfilePage(req,res){
 }
 
 const updateProfile = async function(req,res){
+    console.log(req.body,req.files)
     req.body.profileUpdated =true;
     let newCompany = await companymodel.findOneAndUpdate({
         _id: req.session.company._id},req.body,{new:true});
-        req.files.Image.mv("./public/image/companyProfile/" + req.session.company._id + ".jpg");
+        req.files.image.mv("./public/image/companyProfile/" + req.session.company._id + ".jpg");
         console.log(newCompany);
         req.session.company = newCompany;
         res.redirect("/company/home");
