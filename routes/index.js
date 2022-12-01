@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-const { signupage, login, dosignup, dologin, homePage, viewJob, userCompany,userUpdateForm,updateFormProfile,
-    userProfile, applyJOB,} = require("../controllers/userController");
+const { signupage, login, dosignup, dologin, homePage, viewJob, userCompany, userUpdateForm, updateFormProfile,
+    userProfile, applyJOB, } = require("../controllers/userController");
 
 
 const checkuserLoggedIn = require('../middlewares/checkUserLoggedIn');
@@ -21,12 +21,15 @@ router.get('/view-jobs', checkuserLoggedIn, viewJob)
 
 router.get('/usercompanypage', userCompany)
 
-router.get('/userUpdate',userUpdateForm)
 
-router.post('/updateFormUser',updateFormProfile)
-router.get('/UserProfile',userProfile)
 
-router.get('/applyjob/:id', applyJOB)
+router.get('/updateFormUser', checkuserLoggedIn, userUpdateForm)
+
+router.post('/updateFormUser', checkuserLoggedIn, updateFormProfile)
+
+router.get('/UserProfile', checkuserLoggedIn, userProfile)
+
+router.get('/applyjob/:id', checkuserLoggedIn, applyJOB)
 
 
 

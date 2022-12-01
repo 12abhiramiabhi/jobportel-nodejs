@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/stylesheets/updateformuser.css">
 <h1>Update form</h1>
 <div class="form">
-    <form action="/company/addjob" method="post">
+    <form action="/updateFormUser" method="post" enctype="multipart/form-data">
         <table class="table">
-           
+
             <tr>
                 <td>resume</td>
-                <td><textarea name="resume" id="" cols="30" rows="10" placeholder="resume"></textarea></td>
+                <td><textarea name="resume" id="" placeholder="resume"></textarea></td>
             </tr>
             <tr>
                 <td>Address</td>
@@ -30,6 +30,7 @@
             </tr>
 
         </table>
-       <a href="/views/userProfile"><button class="btn" type="submit">Submit</button></a>
+        <button class="btn" type="submit">Submit</button>
+
     </form>
 </div>
