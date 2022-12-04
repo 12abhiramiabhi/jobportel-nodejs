@@ -3,18 +3,21 @@ h1 {
 }
 
 body {
-    /* background-image: url("https://www.ndtv.com/education/cache-static/media/presets/625X400/article_images/2022/9/29/cuet_pg__featured-image.jpg")no-repeat; */
-    background: url("https://indiaemployerforum.org/wp-content/uploads/2020/08/Delhi-Job-Portal-India-Employer-Forum.png")no-repeat;
+    background-image: url("https://www.ndtv.com/education/cache-static/media/presets/625X400/article_images/2022/9/29/cuet_pg__featured-image.jpg")no-repeat;
+    /* background: url("https://indiaemployerforum.org/wp-content/uploads/2020/08/Delhi-Job-Portal-India-Employer-Forum.png")no-repeat; */
+    background: url(https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?w=2000);
     font-size: 30px;
+
     background-size: cover;
 }
 
 button {
-    font-size: 28px;
+    font-size: 20px;
     position: relative;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 10px;
+    margin: 20px;
     width: 120px;
     border: none;
     border-radius: 1rem;
@@ -22,15 +25,30 @@ button {
 }
 
 button:hover {
-    background: rgb(102, 102, 214);
-    color: rgb(15, 15, 13);
+    background: rgb(34, 32, 32);
+    color: white;
     border: none;
     outline: none;
     transition: all 0.4s;
-
 }
 
 .table {
     border-radius: 1rem;
     color: black;
+}
+.main {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 800px;
+    margin: auto;
+    padding: 70px;
+}
+#ta{
+ 
+    color: black;
+    font-size: 20px;
+}
+#ta1{
+   
+    color: black;
+    font-size: 15px;
 }

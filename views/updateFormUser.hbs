@@ -1,27 +1,26 @@
 <link rel="stylesheet" href="/stylesheets/updateformuser.css">
-<h1>Update form</h1>
+<h1 class="head">Update form</h1>
 <div class="form">
+    <div class="main">
     <form action="/updateFormUser" method="post" enctype="multipart/form-data">
         <table class="table">
-
+           
             <tr>
-                <td>resume</td>
-                <td><textarea name="resume" id="" placeholder="resume"></textarea></td>
+                <td>Resume</td>
+                <td><textarea name="resume" id="" cols="30" rows="3" placeholder="resume"></textarea></td>
             </tr>
             <tr>
                 <td>Address</td>
-
-                
-                <td><textarea name="address" id="" cols="30" rows="10" placeholder="address"></textarea></td>
+                <td><textarea name="address" id="" cols="30" rows="6" placeholder="address"></textarea></td>
             </tr>
 
             <tr>
-                <td>experience</td>
-                <td><textarea name="experience" id="" cols="30" rows="10" placeholder="experience"></textarea></td>
+                <td>Experience</td>
+                <td><textarea name="experience" id="" cols="30" rows="2" placeholder="experience"></textarea></td>
             </tr>
             <tr>
-                <td>skills</td>
-                <td><textarea name="skills" id="" cols="30" rows="10" placeholder="skills"></textarea></td>
+                <td>Skills</td>
+                <td><textarea name="skills" id="" cols="30" rows="2" placeholder="skills"></textarea></td>
             </tr>
 
             <tr>
@@ -33,4 +32,5 @@
         <button class="btn" type="submit">Submit</button>
 
     </form>
+</div>
 </div>

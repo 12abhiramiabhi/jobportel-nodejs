@@ -6,3 +6,28 @@ body {
     font-size: 22px;
 
 }
+.main {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 800px;
+    margin: auto;
+    padding: 90px;
+}
+button{
+    height: 30px;
+    width: 20%;
+    margin-right: 20PX;
+    border: 1px solid rgb(140, 140, 207);
+    margin: 20PX;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.4S;
+}
+button:hover{
+    background: rgb(102, 102, 214);
+    color: rgb(31, 23, 9);
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+    
+}

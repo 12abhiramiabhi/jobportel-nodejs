@@ -7,7 +7,7 @@
 .navbar-brand {
     font-size: 2rem;
     font-family: 'Dancing Script', cursive;
-    color: rgb(10, 10, 94);
+    color: red;
 }
 
 .nav-link {
@@ -58,7 +58,7 @@
 }
 
 .main {
-    background: url("https://s40424.pcdn.co/in/wp-content/uploads/2022/09/interview.jpg")no-repeat;
+    background: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_538358610_2000133320009280273_253701.jpg")no-repeat;
     /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4okWAQ0kmkFcS9WNeKGgafIXVrFbDfFVtNg&usqp=CAU")no-repeat; */
     background-size: cover;
     min-height: 95vh;
@@ -100,13 +100,11 @@
 
 .red {
     color: red;
-    margin-bottom: 10px;
 }
 
 .ceta h1 {
     font-size: 3.5rem;
     color: rgb(7, 7, 78);
-    margin-top: 20px;
 }
 
 .ceta .card:hover {
@@ -136,52 +134,29 @@
     transition: all 0.4s;
 }
 
-.card-body {
-    height: 250px;
-    box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 12px 25px -11px rgba(0, 0, 0, 0.75);
+.resume {
+    background: linear-gradient(rgba(4, 11, 75, 0.719), rgba(4, 26, 100, 0.73)), url("https://realconnectcc.com/assets/img/solutions/customer-experience/RC_customersupport_A1_Rectangle_5_pattern.jpg");
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
 }
-
-button {
-    margin: 50px;
-}
-.btn33{
-    height: 30px;
-    width: 60%;
-    border: 1px solid rgb(140, 140, 207);
-    margin: 20PX;
-    border-radius: 5px;
-    color: rgb(130, 130, 231);
-    transition: all 0.4S;
-}
-.btn33:hover{
-    background: rgb(102, 102, 214);
-    color: rgb(31, 23, 9);
-    border: none;
+.pl{
+    height: 52px;
+    width: 130px;
     outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transform: all 0.4s;
+    background-color: rgb(248, 83, 83);
+}
+.pl:hover{
+    background: rgb(214, 11, 11);
     transition: all 0.4s;
 }
-.btn44{
-    height: 30px;
-    width: 60%;
-    border: 1px solid rgb(140, 140, 207);
-    margin: 20PX;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    color: rgb(130, 130, 231);
-    transition: all 0.4S;
+/* .para{
+    color: aliceblue;
 }
-.btn44:hover{
-    background: rgb(102, 102, 214);
-    color: rgb(31, 23, 9);
-    border: none;
-    outline: none;
-    transition: all 0.4s;
-}
-
-
-
-.col-lg-3{
-    margin-bottom: 20px;
-}
+.para2{
+    color: aliceblue;
+} */

@@ -3,7 +3,7 @@ h1 {
 }
 
 body {
-    background: url("https://st4.depositphotos.com/14101486/28582/i/600/depositphotos_285825710-stock-photo-human-resource-management-and-recruitment.jpg")no-repeat;
+    background: url("https://images.pexels.com/photos/950241/pexels-photo-950241.jpeg?cs=srgb&dl=pexels-gdtography-950241.jpg&fm=jpg")no-repeat;
     font-size: 30px;
     background-size: cover;
 }
@@ -13,7 +13,8 @@ button {
     position: relative;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 10px;
+    margin: 20px;
     width: 120px;
     border: none;
     border-radius: 1rem;
@@ -21,8 +22,8 @@ button {
 }
 
 button:hover {
-    background: rgb(102, 102, 214);
-    color: rgb(15, 15, 13);
+    background: rgb(34, 32, 32);
+    color: white;
     border: none;
     outline: none;
     transition: all 0.4s;
@@ -36,3 +37,17 @@ button:hover {
 .form {
     color: brown;
 }
+.main {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 800px;
+    margin: auto;
+    padding: 90px;
+}
+.head{
+    font-size: 55px;
+    margin: 20px;
+}
+.btn{
+    color:white ;
+}
+
